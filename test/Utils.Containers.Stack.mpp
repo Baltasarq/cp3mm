@@ -1,0 +1,52 @@
+
+namespace Utils {
+	namespace Containers {
+		class Stack {
+		public:
+			typedef int DataType;
+
+			class StackFrame {
+			private:
+				int x;
+			public:
+				StackFrame(int x)
+					{ this->x = x; }
+				int getX()
+					{ return x; }
+			};
+		private:
+			int * v;
+			int num;
+			int Max;
+		public:
+			inline Stack(int max = 128) : Max(max), num(0)
+				{ v = new int[ Max ]; }
+			inline ~Stack()
+				{ delete[] v; }
+			bool push(const DataType &x)
+				{
+					bool toret = true;
+
+					if ( num < Max )
+						v[num++]=x;
+					else	toret = false;
+
+					return toret;
+				}
+			inline const DataType &getTop() const
+				{ return v[num - 1]; }
+			inline bool isEmpty()
+				{ return ( num == 0 ); }
+			bool pop()
+				{
+					bool toret = true;
+
+					if ( num > 0 )
+						--num;
+					else	toret = false;
+
+					return toret;
+				}
+		};
+	}
+}

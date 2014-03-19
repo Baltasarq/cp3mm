@@ -1,0 +1,65 @@
+// Person2.mpp
+/*
+	A test of the C++ preprocessor
+*/
+
+#include <iostream>
+#include <string>
+
+using namespace std; using std::cout;
+import Ente;
+
+namespace BussinessLogic {
+
+class Person : public Ente {
+public:
+	static const std::string CanonicalName = "John Doe";
+private:
+	std::string name;
+	unsigned int age;
+	std::string email;
+	double salary;
+public:
+	explicit Person(const std::string &n, unsigned int a, const std::string &e)
+		: name(n), age(a), email(e)
+		{}
+	Person(const std::string &n) : name( n )
+	    	{}
+
+
+	inline int getAge() const
+		{ return age; }
+	void setAge(int a)
+		{ age = a; }
+
+	inline const std::string &getEmail() const
+		{ return email; }
+	void setEmail(const std::string &e)
+		{ email = e; }
+
+	inline const std::string &getName() const
+		{ return name; }
+	void setName(const std::string &n)
+		{
+			if ( !n.empty() ) {
+				name = n;
+			}
+		}
+	std::string toString() const
+		{
+			return ( getName() + ": " + getEmail() );
+		}
+};
+
+}
+
+int main()
+{
+	BussinessLogic::Person p1( BussinessLogic::Person::CanonicalName, 0, "" );
+	BussinessLogic::Person p2( "Baltasar", 34, "jbgarcia@uvigo.es" );
+
+	cout << "\nCp3 test\n" << endl;
+	cout << p1.getName() << endl;
+	cout << p2.getName() << endl;
+	cout << endl;
+}

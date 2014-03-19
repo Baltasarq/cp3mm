@@ -1,0 +1,39 @@
+// person.mpp
+#include <string>
+#include <iostream>
+#include <sstream>
+#include <cstdlib>
+
+namespace Person {
+
+class Person {
+public:
+        Person(const std::string &n, unsigned int ph)
+                : name( n ), phone( ph )
+                {}
+        unsigned int getPhone() const
+                { return phone; }
+        const std::string &getName() const
+                { return name; }
+        std::string toString() const
+                {
+                        std::ostringstream out;
+
+                        out << getName() << ", " << getPhone();
+
+                        return out.str();
+                }
+private:
+        std::string name;
+        unsigned int phone;
+}
+
+}
+
+int main()
+{
+        Person::Person p( "Baltasar", 988387028 );
+        std::cout << p.toString() << std::endl;
+
+	return EXIT_SUCCESS;
+}

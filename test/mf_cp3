@@ -1,0 +1,9 @@
+SRC_ORG=$(SRC).cp3
+SRC_CPP=$(SRC).cpp
+
+exe: $(SRC_CPP) $(SRC).h 
+	@g++ $(SRC_CPP) -o $(SRC)
+
+$(SRC_CPP): $(SRC_ORG)
+	@./cp3 $(SRC_ORG)
+

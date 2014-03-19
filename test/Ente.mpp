@@ -1,0 +1,14 @@
+#include <string>
+#include <cstdio>
+
+namespace BussinessLogic {
+
+class Ente {
+public:
+	int x;
+	void f() { std::printf( "%d\n", x ); }
+	virtual std::string toString() const;
+}
+
+}
+

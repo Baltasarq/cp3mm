@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="cp3--" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Option show_notes="0">
+			<notes>
+				<![CDATA[- Terminar los niveles de estricticidad
+
+	- In the third level of strictness (--level=3), 
+		* one class (inside its namespace) in each file. 			* No mix of functions & classes
+
+	- The second level is an intermediate one 
+		* Allows various classes per namespace.
+		* No mix of functions & classes
+
+	- In the first level of strictness, 
+		* more than one class in the main namespace
+		* functions and classes can be mixed
+		* possible to declare various inner namespaces  in the main (outer) one.
+
+- Soportar declaración de plantillas en tipos
+	Es necesario crear una función getTypeReference(), de manera que se deje getReference() para todo lo demás.
+
+]]>
+			</notes>
+		</Option>
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/cp3mm" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Option parameters="--force --level=99 test/error.mpp" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/cp3mm" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Option parameters="--version" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="-fexceptions" />
+			<Add directory="../MyLib/" />
+		</Compiler>
+		<Linker>
+			<Add option="-static" />
+		</Linker>
+		<Unit filename="../MyLib/fileio.h" />
+		<Unit filename="../MyLib/fileman.cpp" />
+		<Unit filename="../MyLib/fileman.h" />
+		<Unit filename="../MyLib/lex.cpp" />
+		<Unit filename="../MyLib/lex.h" />
+		<Unit filename="../MyLib/stringman.cpp" />
+		<Unit filename="../MyLib/stringman.h" />
+		<Unit filename="src/appinfo.cpp" />
+		<Unit filename="src/appinfo.h" />
+		<Unit filename="src/cp3parser.cpp" />
+		<Unit filename="src/cp3parser.h" />
+		<Unit filename="src/cp3tds.cpp" />
+		<Unit filename="src/cp3tds.h" />
+		<Unit filename="src/main.cpp" />
+		<Extensions>
+			<code_completion />
+			<debugger />
+			<lib_finder disable_auto="1" />
+			<envvars />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

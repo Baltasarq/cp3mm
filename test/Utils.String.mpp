@@ -1,0 +1,41 @@
+/*
+	String management module
+*/
+
+
+#include <string>
+#include <cctype>
+
+namespace Utils {
+	namespace String {
+	private:
+		int charToUpper(int x) {
+			return std::tolower( x );
+		}
+
+	public:
+
+		static int charToLower(int x) {
+			return std::tolower( x );
+		}
+
+
+		void toUpper(std::string &s) {
+			std::string::iterator it = s.begin();
+
+			for(; it != s.end(); ++it) {
+				*it = charToUpper( *it );
+			}
+		}
+
+		void toLower(std::string &s) {
+			std::string::iterator it = s.begin();
+
+			for(; it != s.end(); ++it) {
+				*it = charToLower( *it );
+			}
+		}
+
+	}
+}
+

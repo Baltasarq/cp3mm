@@ -1,0 +1,77 @@
+9
+
+dir
+0
+https://cp3.svn.sourceforge.net/svnroot/cp3
+https://cp3.svn.sourceforge.net/svnroot/cp3
+
+
+
+2009-07-10T15:35:02.178187Z
+0
+
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+ada5ed85-4ff8-4e68-8d1c-2678c45bc460
+
+cp3tds.cpp
+file
+
+
+
+add
+
+appinfo.h
+file
+
+
+
+add
+
+cp3parser.cpp
+file
+
+
+
+add
+
+main.cpp
+file
+
+
+
+add
+
+cp3tds.h
+file
+
+
+
+add
+
+cp3parser.h
+file
+
+
+
+add
+
+appinfo.cpp
+file
+
+
+
+add
+

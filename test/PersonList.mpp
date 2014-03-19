@@ -1,0 +1,11 @@
+#include "person.h"
+#include <vector>
+
+namespace ListaPersonas {
+
+class Lista {
+public:
+	typedef std::vector<Person::Person> lPersons;
+}
+
+}
