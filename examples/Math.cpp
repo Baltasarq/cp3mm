@@ -1,0 +1,20 @@
+// Math.mpp
+/*
+	Mathematics module
+*/
+
+namespace Math {
+	const double PI = 3.1415927;
+
+	inline double sqr(double x) {
+		return x * x;
+	}
+
+	inline double addPercentage(double val, double x) {
+		return ( val * ( 1 + x ) );
+	}
+
+	inline double removePercentage(double val, double x) {
+		return ( val - ( val * x ) );
+	}
+} 
